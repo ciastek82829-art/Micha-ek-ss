@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miła Wiadomość</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        .message {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 50px 80px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            animation: float 3s infinite ease-in-out, pulse 2s infinite alternate;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .message:hover {
+            transform: scale(1.05) rotate(-1deg);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+            100% { box-shadow: 0 0 40px rgba(255,255,255,0.6); }
+        }
+
+        .message::after {
+            content: "✨";
+            display: block;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            animation: sparkle 1.5s infinite alternate;
+        }
+
+        @keyframes sparkle {
+            0% { opacity: 0; transform: translateY(0) rotate(0deg); }
+            50% { opacity: 1; transform: translateY(-5px) rotate(15deg); }
+            100% { opacity: 0; transform: translateY(0) rotate(-15deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="message">Zostałeś zmichalokwany burdelku :)</div>
+</body>
+</html>
